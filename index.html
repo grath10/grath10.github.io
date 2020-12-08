@@ -153,6 +153,112 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/12/08/spring-mvc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="June">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="June">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/12/08/spring-mvc/" class="post-title-link" itemprop="url">spring mvc</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-12-08 09:30:57 / 修改时间：10:35:52" itemprop="dateCreated datePublished" datetime="2020-12-08T09:30:57+08:00">2020-12-08</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="IoC容器-依赖注入DI"><a href="#IoC容器-依赖注入DI" class="headerlink" title="IoC容器(依赖注入DI)"></a>IoC容器(依赖注入DI)</h3><p><code>org.springframework.beans</code>与<code>org.springframework.context</code>包</p>
+<p><code>BeanFactory</code><br><code>ApplicationContext</code></p>
+<p>IoC容器通过读取配置元数据进行初始化、配置与装配对象，而配置元数据可以用XML、Java注解或者Java代码表示。  </p>
+<p>Java配置：<br><code>@Configuration、@Bean、@Import、@DependsOn</code>注解  </p>
+<h2 id="Spring-MVC-Spring-Web-MVC"><a href="#Spring-MVC-Spring-Web-MVC" class="headerlink" title="Spring MVC(Spring Web MVC)"></a>Spring MVC(Spring Web MVC)</h2><p>核心<code>Servlet</code>: <code>DispatcherServlet</code></p>
+<h3 id="上下文层次Context-hierarchy"><a href="#上下文层次Context-hierarchy" class="headerlink" title="上下文层次Context hierarchy"></a>上下文层次Context hierarchy</h3><img src="/2020/12/08/spring-mvc/mvc-context-hierarchy.png" class="" title="demo">
+
+<h3 id="特定Bean类型"><a href="#特定Bean类型" class="headerlink" title="特定Bean类型"></a>特定Bean类型</h3><p>DispatcherServlet委托指定的bean处理请求与渲染合适的响应，通过特定bean，Sring管理的对象实例实现框架契约。通常以内置契约出现，但可以定制属性、继承或者进行替换。<br>下面的表格列出了DispatcherServlet所检测的特定beans：</p>
+<table>
+<thead>
+<tr>
+<th align="center">bean类型</th>
+<th align="left">解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">HandlerMapping</td>
+<td align="left">将请求与拦截列表一起映射到处理器，以进行预处理和后处理。映射基于某些条件，具体细节因实现而异。两个主要的实现是RequestMappingHandlerMapping(支持@RequestMapping注解的方法)和SimpleUrlHandlerMapping(维护URI路径显式注册)</td>
+</tr>
+<tr>
+<td align="center">HandlerAdapter</td>
+<td align="left">帮助DispatcherServlet调用映射到请求的处理器，不管实际如何调用。例如，调用带注解的控制器controller需要解析注解。主要目的是保护这些细节。</td>
+</tr>
+<tr>
+<td align="center">HandlerExceptionResolver</td>
+<td align="left">解决异常的策略，可能将它们映射到处理程序、HTML错误视图或者其他目标</td>
+</tr>
+<tr>
+<td align="center">ViewResolver</td>
+<td align="left">将处理器返回的逻辑String视图名称解析为实际view，以呈现给响应</td>
+</tr>
+<tr>
+<td align="center">LocaleResolver，LocaleContextResolver</td>
+<td align="left">解析正在使用的可能时区，以便提供国际化视图</td>
+</tr>
+<tr>
+<td align="center">ThemeResolver</td>
+<td align="left">解析可用主题，例如：提供个性化布局</td>
+</tr>
+<tr>
+<td align="center">MultipartResolver</td>
+<td align="left">解析请求(例如：浏览器表单文件上传)</td>
+</tr>
+<tr>
+<td align="center">FlashMapManager</td>
+<td align="left">存储和检索输入输出，通常用于重定向将属性从一个请求传到另一个</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/23/%E5%9B%BE%E7%89%87%E6%B8%B2%E6%9F%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -427,7 +533,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
